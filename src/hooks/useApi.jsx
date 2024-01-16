@@ -8,13 +8,10 @@ const useApi = async (url) => {
     const fetchData = await fetch(url)
     const response = await fetchData.json();
   
-    if (!response) 
-      setData(response);
-    
+    if (response) setData(response);
   } catch (error) {
     setError(error);
   }
-
 
   return { data, error }
 }
