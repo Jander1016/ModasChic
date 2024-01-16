@@ -1,0 +1,149 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: grey;
+
+}
+
+
+.titles {
+    margin-bottom: 8px;
+
+}
+
+.archive-input {
+    width: 90%;
+}
+
+.category-input {
+    width: 40%;
+    padding: 3px 10px;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    background-color: #f8f8f8;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    margin: 40px;
+    background-color: #fff;
+    padding: 15px;
+    gap: 25px;
+    max-width: 70%;
+    width: 500px;
+    height: 500px;
+}
+
+.category-selection {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 10px 0 10px 0;
+}
+
+.description-input {
+    width: 100%;
+    height: 80px;
+    padding: 3px 10px;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    background-color: #f8f8f8;
+    resize: none;
+}
+
+.title-input {
+    width: 100%;
+    padding: 3px 10px;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    background-color: #f8f8f8;
+    resize: none;
+}
+
+.size-checkbox {
+    display: flex;
+    justify-content: space-between;
+}
+
+.prizeStock-container {
+    display: flex;
+    justify-content: space-around;
+}
+
+
+.prizeStock {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 8px
+}
+
+.prizeStock input {
+    height: 30px;
+    width: 30%;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    background-color: #f8f8f8;
+    resize: none;
+
+}
+
+.buttons-container {
+    display: flex;
+    justify-content: space-around;
+}
+
+.add {
+    background: #CAFFA0;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    padding: 8px 18px 5px;
+    border: none;
+}
+
+.add:hover,
+.cancel:hover {
+    filter: saturate(200%);
+    cursor: pointer;
+    transform: scale(1.1);
+}
+
+.cancel {
+    background: #FFA0A0;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    padding: 8px 18px;
+    border: none;
+}
+
+.checkeable input {
+    display: none;
+}
+
+.checkeable img {
+
+    width: 80%;
+    border: 2px solid transparent;
+}
+
+.checkeable input {
+
+    display: none;
+}
+
+.checkeable input:checked+img {
+    border-color: blue;
+    filter: brightness(1.1);
+}
