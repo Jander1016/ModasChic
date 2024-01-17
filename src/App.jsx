@@ -1,15 +1,10 @@
 
-// import { useEffect } from 'react'
 import "./App.css";
 import Popup from "./components/Popup";
 
-function App() {
+export default function App() {
   
   return (
     <>
       <Popup />
-    </>
-  )
-}
-
-export default App;
+</>)}
