@@ -14,8 +14,6 @@ main{
   grid-template-columns: repeat(auto-fit, minmax(200px,1fr));
   place-content: center;
   gap: 30px;
-
-  margin: 0 auto;
 }
 
 .product{

@@ -14,13 +14,16 @@ function App() {
   }, [getProducts])
   
 
-
   return (
     <>
       <main> 
         {
           loading
-          ? <p>Cargando.....</p>
+          ? <article className="d-flex justify-content-center">
+              <div className="spinner-border" role="status">
+                <span className="visually-hidden">Loading...</span>
+              </div>
+             </article>
           :<Products products={products}/>
         } 
       </main>
