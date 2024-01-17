@@ -1,14 +1,16 @@
 import { useState } from 'react'
 import AddForm from './components/addProductsForm/AddForm'
-import EditForm  from './components/editProductsForm/EditForm'
+import EditFormOpen  from './components/editProductsForm/EditFormOpen'
+import OpenModalForm from './components/OpenModalForm'
 
 function App() {
-  const [count, setCount] = useState(0)
+  const {isModalOpen, openModal, closeModal} = OpenModalForm()
 
   return (
     <>
-      <AddForm></AddForm>
-      <EditForm></EditForm>
+    {/* Botón para abrir modal de editar producto <button onClick={openModal}>Open Modal</button> */}
+
+     <EditFormOpen isOpen={isModalOpen} onClose={closeModal}></EditFormOpen>
     </>
   )
 }

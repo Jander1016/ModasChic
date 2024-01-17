@@ -1,9 +1,9 @@
 import React from "react";
-import './AddForm.css'
+import './EditForm.css'
 
 
 
-const AddForm = ({ isOpen, onClose, children }) => {
+const EditFormOpen = ({ isOpen, onClose, children }) => {
     if (!isOpen) {
       return null;
     }
@@ -44,7 +44,7 @@ const AddForm = ({ isOpen, onClose, children }) => {
                   </div>
               </div>
               <div className="buttons-container">
-                  <button className="add">AGREGAR</button>
+                  <button className="add">EDITAR</button>
                   <button className="cancel " onClick={onClose}>CANCELAR</button>
                   
               </div>
@@ -55,4 +55,4 @@ const AddForm = ({ isOpen, onClose, children }) => {
       
     );
   };
-export default AddForm
+export default EditFormOpen
