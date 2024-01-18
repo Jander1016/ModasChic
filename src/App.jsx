@@ -1,21 +1,20 @@
 import './App.css'
 import ProductsDashboard from './pages/products'
-import { useState } from 'react'
-import AddForm from './components/addProductsForm/AddForm'
-import EditFormOpen  from './components/editProductsForm/EditFormOpen'
 import OpenModalForm from './components/OpenModalForm'
+import AddForm from './components/addProductsForm/AddForm.jsx'
 
 function App() {
-  const {isModalOpen, openModal, closeModal} = OpenModalForm()
+  const { isModalOpen, openModal, closeModal } = OpenModalForm()
+
 
   return (
     <>
-        {
-         <ProductsDashboard />
-        } 
-    {/* Botón para abrir modal de editar producto <button onClick={openModal}>Open Modal</button> */}
+      <button onClick={openModal}>Open Create Modal</button>
 
-     <EditFormOpen isOpen={isModalOpen} onClose={closeModal}></EditFormOpen>
+      <ProductsDashboard /> 
+
+      <AddForm isOpen={isModalOpen} onClose={closeModal}></AddForm>
+
     </>
   )
 }
