@@ -13,7 +13,7 @@ const useApi = async (url) => {
     
   } catch (error) {
     setError(error);
-  }  
+  }
 
 
   return { data, error }

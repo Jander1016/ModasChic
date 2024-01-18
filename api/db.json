@@ -1,12 +1,13 @@
 {
-  "products":[
+  "Products":[
   {
     "id": 1,
     "title": "Camisetas ajustadas premium informales para hombre ",
     "price": 22.3,
     "description": "Estilo ajustado, manga larga raglán en contraste, tapeta henley de tres botones, tejido ligero y suave para un uso cómodo y transpirable. Y camisas con costuras sólidas y cuello redondo hechas para mayor durabilidad y un excelente ajuste para ropa de moda informal y fanáticos acérrimos del béisbol. El escote redondo estilo Henley incluye una tapeta de tres botones.",
     "category": "camiseta",
-    "image": "https://fakestoreapi.com/img/71-3HjGNDUL._AC_SY879._SX._UX._SY._UY_.jpg"
+    "image": "https://fakestoreapi.com/img/71-3HjGNDUL._AC_SY879._SX._UX._SY._UY_.jpg",
+    "stock": 12
   },
   {
     "id": 2,
@@ -14,7 +15,8 @@
     "price": 55.99,
     "description": "Excelentes chaquetas de abrigo para primavera/otoño/invierno, adecuadas para muchas ocasiones, como trabajar, hacer caminatas, acampar, escalar montañas/rocas, andar en bicicleta, viajar u otras actividades al aire libre. Buena opción de regalo para usted o su familiar. Un amor de corazón cálido al Padre, esposo o hijo en este día de acción de gracias o Navidad.",
     "category": "sudadera",
-    "image": "https://fakestoreapi.com/img/71li-ujtlUL._AC_UX679_.jpg"
+    "image": "https://fakestoreapi.com/img/71li-ujtlUL._AC_UX679_.jpg",
+    "stock": 90
   },
   {
     "id": 3,
@@ -22,7 +24,8 @@
     "price": 15.99,
     "description": "El color puede ser ligeramente diferente en la pantalla y en la práctica. / Tenga en cuenta que la constitución corporal varía según la persona, por lo tanto, la información detallada sobre el tamaño debe revisarse a continuación en la descripción del producto.",
     "category": "camiseta",
-    "image": "https://fakestoreapi.com/img/71YXzeOuslL._AC_UY879_.jpg"
+    "image": "https://fakestoreapi.com/img/71YXzeOuslL._AC_UY879_.jpg",
+    "stock": 19
   },
   {
     "id": 4,
@@ -30,7 +33,8 @@
     "price": 29.95,
     "description": "100 % POLIURETANO (cubierta) 100 % POLIÉSTER (forro) 75 % POLIÉSTER 25 % ALGODÓN (SUÉTER), Material de piel sintética para estilo y comodidad / 2 bolsillos delanteros, Chaqueta de piel sintética estilo mezclilla con capucha 2 por uno, Detalle de botones en cintura / Detalle de costuras en los costados, LAVAR SOLAMENTE A MANO / NO USAR LEJÍA / SECAR AL tendedero / NO PLANCHAR",
     "category": "chaqueta",
-    "image": "https://fakestoreapi.com/img/81XH0e8fefL._AC_UY879_.jpg"
+    "image": "https://fakestoreapi.com/img/81XH0e8fefL._AC_UY879_.jpg",
+    "stock": 129
   },
   {
     "id": 5,
@@ -38,7 +42,8 @@
     "price": 39.99,
     "description": "Ligero, perfecto para viajes o uso informal. Manga larga con capucha, diseño de cintura con cordón ajustable. Chubasquero con cierre frontal con botón y cremallera, totalmente forrado a rayas. El chubasquero tiene 2 bolsillos laterales y es de buen tamaño para guardar todo tipo de cosas, cubre las caderas y la capucha es generosa pero no exagerada. Capucha forrada de algodón adjunta con Los cordones ajustables le dan un aspecto de estilo real.",
     "category": "women's clothing",
-    "image": "https://fakestoreapi.com/img/71HblAHs5xL._AC_UY879_-2.jpg"
+    "image": "https://fakestoreapi.com/img/71HblAHs5xL._AC_UY879_-2.jpg",
+    "stock": 18
   },
   {
     "id": 6,
@@ -46,7 +51,8 @@
     "price": 9.85,
     "description": "95% RAYÓN 5% SPANDEX, Hecho en EE. UU. o importado, No usar lejía, Tejido liviano con gran elasticidad para mayor comodidad, Acanalado en mangas y escote / Doble costura en el dobladillo inferior",
     "category": "camiseta",
-    "image": "https://fakestoreapi.com/img/71z3kpMAYsL._AC_UY879_.jpg"
+    "image": "https://fakestoreapi.com/img/71z3kpMAYsL._AC_UY879_.jpg",
+    "stock": 9
   },
   {
     "id": 7,
@@ -54,7 +60,8 @@
     "price": 7.95,
     "description": "100 % poliéster, lavado a máquina, tejido entrelazado 100 % poliéster catiónico, lavado a máquina y preencogido para un excelente ajuste, liviano, espacioso y altamente transpirable con tela que absorbe la humedad y ayuda a mantenerla alejada, tela suave y liviana con cómodo cuello en V y un ajuste más delgado, ofrece una silueta elegante y más femenina y mayor comodidad",
     "category": "",
-    "image": "https://fakestoreapi.com/img/51eg55uWmdL._AC_UX679_.jpg"
+    "image": "https://fakestoreapi.com/img/51eg55uWmdL._AC_UX679_.jpg",
+    "stock": 43
   },
   {
     "id": 8,
@@ -62,7 +69,8 @@
     "price": 12.99,
     "description": "95% algodón, 5% spandex, Características: informal, manga corta, estampado de letras, cuello en V, camisetas de moda, la tela es suave y algo elástica. Ocasión: informal/oficina/playa/escuela/hogar/calle. Temporada: Primavera,Verano,Otoño,Invierno.",
     "category": "camiseta",
-    "image": "https://fakestoreapi.com/img/61pHAEJ4NML._AC_UX679_.jpg"
+    "image": "https://fakestoreapi.com/img/61pHAEJ4NML._AC_UX679_.jpg",
+    "stock": 109
   }
 ]
 }
