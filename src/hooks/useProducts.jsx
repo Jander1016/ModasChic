@@ -20,7 +20,20 @@ export function useProducts() {
     }    
   },[])
 
+  const getProductsById = useCallback( async(id) =>{
+      try {
+        setLoading(true)
+        setError(null)
+        const newProducts = await productsList('http://localhost:3001/Products/'+ id)
+        setProducts(newProducts)
+      } catch (e) {
+        setError(e.errorMessage)
+      } finally {
+        setLoading(false)
+      }    
+    },[])
 
-  return { products, loading, getProducts, error }
+
+  return { products, loading, getProducts, getProductsById, error }
 
 }
