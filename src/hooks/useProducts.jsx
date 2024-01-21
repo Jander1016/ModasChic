@@ -25,7 +25,7 @@ export function useProducts() {
         setLoading(true)
         setError(null)
         const newProducts = await productsList('http://localhost:3001/Products/'+ id)
-        setProducts(newProducts)
+        setProducts([newProducts])
       } catch (e) {
         setError(e.errorMessage)
       } finally {
