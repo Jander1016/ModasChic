@@ -6,6 +6,7 @@ export function useProducts() {
   const [products, setProducts] = useState([])
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState(null)
+  const [productById, setProductById] = useState([])
 
   const getProducts = useCallback( async() =>{
     try {
@@ -25,7 +26,7 @@ export function useProducts() {
         setLoading(true)
         setError(null)
         const newProducts = await productsList('http://localhost:3001/Products/'+ id)
-        setProducts([newProducts])
+        setProductById(newProducts)
       } catch (e) {
         setError(e.errorMessage)
       } finally {
@@ -34,6 +35,6 @@ export function useProducts() {
     },[])
 
 
-  return { products, loading, getProducts, getProductsById, error }
+  return { products, productById, loading, getProducts, getProductsById, error }
 
 }

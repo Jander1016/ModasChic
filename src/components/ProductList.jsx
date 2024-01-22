@@ -1,15 +1,26 @@
 /* eslint-disable react/prop-types */
 
 import { FaRegEdit,FaRegTrashAlt } from "react-icons/fa"
+import OpenModalForm from "./OpenModalForm";
+import EditFormOpen from "./editProductsForm/EditFormOpen"; 
 
 function ProductRow({ product }) {
+  const { isModalOpen, openModal, closeModal } = OpenModalForm()
+
   const productName = product.stock ? (
     product.title
   ) : (
     <span style={{ textDecorationLine: "line-through", color: "red"}}>{product.title}</span>
   );
+
+  const handlerEdit = (event) =>{
+    event.preventDefault()
+    console.log(event.target.files)
+    openModal();
+  }
     
   return (
+    <>
     <tr className="product" key={product.id}>
       <th className="product__id" scope="row">
         {product.id}
@@ -31,14 +42,17 @@ function ProductRow({ product }) {
       <td className="product__price">{product.price}</td>
       <td className="product__stock">{product.stock}</td>
       <td className="product__actions text-center">
-        <button className="btn btn-primary" type="button">
+        <button onClick={handlerEdit} className="btn btn-primary" type="button">
           <FaRegEdit />
         </button>
-        <button className="btn btn-danger" type="button">
+        <button  className="btn btn-danger" type="button">
           <FaRegTrashAlt />
         </button>
       </td>
     </tr>
+          { isModalOpen && <EditFormOpen isOpen={isModalOpen} onClose={closeModal} /> }
+    </>
+
   );
 }
 
