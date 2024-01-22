@@ -1,38 +1,61 @@
 /* Popup.css */
 
 .popup {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: rgb(235, 101, 101);
-    padding: 20px;
-    border: 1px solid #ccc;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-    z-index: 1000;
-    width: 250px;
-    height: 350px;
-  }
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color:white;
+  padding: 20px;
+  border: black;
   
-  .popup img {
-    max-width: 100%;
-    height: auto;
-  }
   
-  .popup p {
-    margin-top: 10px;
-  }
-  
-  .popup button {
-    margin-top: 10px;
-    padding: 5px 10px;
-    background-color: #007bff;
-    color: white;
-    border: none;
-    cursor: pointer;
-    width: 100px;
-    height: 50px;
-    
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+  width: 400px;
+  height: 380px;
 
+}
+
+.etiqueta {
+  display: flex;
+  justify-content: center;
+
+}
+
+.popup img {
+  max-width: 130%;
+  height: 70%;
+  border: 4px;
+ }
+
+
+.text {
+  width: 190%;}
+
+.popup h6 {
+  margin-top: 5%;
+}
+.price {
+  display: flex;
+  justify-content: space-between;
+  /* gap: 58% ; */
   }
+
+.popup p {
+
+  font-size: 80%;
+}
+
+.popup button {
+  padding: 5px 10px;
+  color: rgba(248, 10, 10, 0.653);
+  border: none;
+  cursor: pointer;
+  display: flex;
+  margin: 0 auto;
+ display:block;
+ border: 2px; 
+  /* Añadido para centrar horizontalmente */
   
+}

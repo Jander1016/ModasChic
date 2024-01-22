@@ -6,5 +6,5 @@ export default function App() {
   
   return (
     <>
-      <Popup />
+      <Popup  productId={3}/>
 </>)}
