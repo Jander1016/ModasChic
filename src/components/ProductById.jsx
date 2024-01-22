@@ -1,4 +1,4 @@
-import React from 'react'
+/* eslint-disable react/prop-types */
 import EditFormOpen from './editProductsForm/EditFormOpen'
 
 export const ProductById = ({ product }) => {
@@ -7,7 +7,6 @@ export const ProductById = ({ product }) => {
             <EditFormOpen
                 product={product}
             >
-
             </EditFormOpen>
 
         </>

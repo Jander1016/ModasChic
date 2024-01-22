@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-export const OpenModalForm = (id) => {
+export const OpenModalForm = () => {
 
 const [isModalOpen, setIsModalOpen] = useState(false);
 

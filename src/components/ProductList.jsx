@@ -12,6 +12,12 @@ function ProductRow({ product }) {
   ) : (
     <span style={{ textDecorationLine: "line-through", color: "red"}}>{product.title}</span>
   );
+
+  const handlerEdit = (event) =>{
+    event.preventDefault()
+    console.log(event.target.files)
+    openModal();
+  }
     
   return (
     <>
@@ -36,7 +42,7 @@ function ProductRow({ product }) {
       <td className="product__price">{product.price}</td>
       <td className="product__stock">{product.stock}</td>
       <td className="product__actions text-center">
-        <button onClick={openModal} className="btn btn-primary" type="button">
+        <button onClick={handlerEdit} className="btn btn-primary" type="button">
           <FaRegEdit />
         </button>
         <button  className="btn btn-danger" type="button">
@@ -44,7 +50,7 @@ function ProductRow({ product }) {
         </button>
       </td>
     </tr>
-          <EditFormOpen id={1} isOpen={isModalOpen} onClose={closeModal}></EditFormOpen>
+          { isModalOpen && <EditFormOpen isOpen={isModalOpen} onClose={closeModal} /> }
     </>
 
   );

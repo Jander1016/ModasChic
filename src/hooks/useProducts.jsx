@@ -26,8 +26,7 @@ export function useProducts() {
         setLoading(true)
         setError(null)
         const newProduct = await productsList('http://localhost:3001/Products/'+ id)
-        setProductById(newProduct)
-        console.log(productById)
+        setProductById([newProduct])
       } catch (e) {
         setError(e.errorMessage)
       } finally {
@@ -36,6 +35,6 @@ export function useProducts() {
     },[])
 
 
-  return { products, loading, getProducts, getProductsById, error }
+  return { products, productById, loading, getProducts, getProductsById, error }
 
 }
