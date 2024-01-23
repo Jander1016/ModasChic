@@ -1,22 +1,22 @@
-import React from 'react';
 import './Card.css';
-import pantalon1 from "../src/assets/pantalon1.webp"
-const Card = () => {
-  const verDetalles = (productId) => {
+
+const Card = ({productData}) => {
+/*  const verDetalles = (productId) => {
     // Lógica para ver detalles, si es necesario
     console.log(`Detalles del producto ${productId}`);
   };
+*/
 
   return (
     <div className="product-card" id="product1">
       <div className="imgproduct">
-        <img src={pantalon1} alt="Producto 1" />
+        <img src={productData.image} alt={productData.name} />
       </div>
       <div className="description">
-        <h3>Pantalon de chàndal color block</h3>
+        <h3>{productData.title}</h3>
         <div className="catprice">
-        <p className="category">Ropa Deportiva</p>
-        <p className="price">9.99€</p>
+        <p className="category">{productData.category}</p>
+        <p className="price">{productData.price}</p>
         </div>
       </div> 
         <button onClick={() => verDetalles('product1')}>Ver Detalles</button>

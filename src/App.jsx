@@ -1,7 +1,8 @@
-import {Products} from './components/ProductList'
+//import {Products} from './components/ProductList'
 import { useProducts } from './hooks/useProducts'
 import './App.css'
 import { useEffect } from 'react'
+import { ProductsCards } from './components/cards/cards'
 // import { useEffect } from 'react'
 
 function App() {
@@ -24,7 +25,7 @@ function App() {
                 <span className="visually-hidden">Loading...</span>
               </div>
              </article>
-          :<Products products={products}/>
+          :<ProductsCards products={products}/>
         } 
       </main>
     </>
