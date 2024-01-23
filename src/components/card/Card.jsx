@@ -1,6 +1,7 @@
 import React from 'react';
 import './Card.css';
-import pantalon1 from "../src/assets/pantalon1.webp"
+import pantalon1 from "../src/assets/pantalon1.webp";
+import Popup from "../Popup"
 const Card = () => {
   const verDetalles = (productId) => {
     // Lógica para ver detalles, si es necesario
@@ -19,8 +20,8 @@ const Card = () => {
         <p className="price">9.99€</p>
         </div>
       </div> 
-        <button onClick={() => verDetalles('product1')}>Ver Detalles</button>
-      
+        <button onClick={() => verDetalles('productId')}>Ver Detalles</button>
+    <Popup/>
     </div>
   );
 };

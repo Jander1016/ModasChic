@@ -1,4 +1,4 @@
-// Popup.js
+ // Popup.js
 import React, { useState, useEffect } from 'react';
 import './Popup.css';  // Importa el archivo CSS
 
@@ -10,7 +10,7 @@ const Popup = ({ productId }) => {
     // Hacer una solicitud a la API para obtener los detalles del producto por ID
     const fetchProductData = async () => {
       try {
-        const response = await fetch(`http://localhost:3001/Products/${productId}`);
+        const response = await fetch(`http://localhost:3001/Products/${6}`);
         const data = await response.json()
         setProductData(data);
         console.log(data)
@@ -23,26 +23,27 @@ const Popup = ({ productId }) => {
   }, [productId]);
 
   return (
-    <article className="popup">
+    <section className="pop up">
 
       {productData && (
         <>
-          <div className='etiqueta'>
+          <div className='container'>
             <div className='img'>
               <img src={productData.image} alt={productData.name} /> </div>
             <div className='text'>
-              <h6>{productData.title}</h6>
+              <h5>{productData.title}</h5>
               <div className='price'>
                 <p className='category'>{productData.category}</p>
                 <p className='price'>{productData.price}</p>
                 </div>
               <p>{productData.description}</p>
              </div>
-          </div>
+         
           <button>Cerrar</button>
+          </div>
         </>
       )}
-    </article>
+    </section>
   );
 };
 
