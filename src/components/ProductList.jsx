@@ -15,7 +15,7 @@ function ProductRow({ product }) {
 
   const handlerEdit = (event) =>{
     event.preventDefault()
-    console.log(event.target.files)
+  /*   console.log(event.target.files) */
     openModal();
   }
     
@@ -50,7 +50,12 @@ function ProductRow({ product }) {
         </button>
       </td>
     </tr>
-          { isModalOpen && <EditFormOpen isOpen={isModalOpen} onClose={closeModal} /> }
+          { isModalOpen && 
+          <EditFormOpen
+           isOpen={isModalOpen} 
+           onClose={closeModal} 
+           id={product.id}
+           /> }
     </>
 
   );
@@ -74,7 +79,10 @@ function ProductList({ products }) {
         </thead>
         <tbody>
           {products?.map((product) => (
-            <ProductRow key={product.id} product={product} />
+            <ProductRow
+             key={product.id}
+              product={product} 
+              />
           ))}
         </tbody>
       </table>
@@ -89,7 +97,9 @@ function NoProductsResults() {
 export function Products({ products }) {
   const hasProducts = products?.length > 0;
   return hasProducts ? (
-    <ProductList products={products} />
+    <ProductList 
+    products={products}
+     />
   ) : (
     <NoProductsResults />
   );
