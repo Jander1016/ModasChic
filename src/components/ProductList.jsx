@@ -2,7 +2,7 @@
 
 import { FaRegEdit,FaRegTrashAlt } from "react-icons/fa"
 import OpenModalForm from "./OpenModalForm";
-import EditFormOpen from "./editProductsForm/EditFormOpen"; 
+import EditFormOpen from "../pages/editProductsForm/EditFormOpen"; 
 
 function ProductRow({ product }) {
   const { isModalOpen, openModal, closeModal } = OpenModalForm()
@@ -15,8 +15,9 @@ function ProductRow({ product }) {
 
   const handlerEdit = (event) =>{
     event.preventDefault()
-    console.log(event.target.files)
+    console.log(event.target.value)
     openModal();
+    
   }
     
   return (

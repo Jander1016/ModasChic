@@ -5,7 +5,7 @@ import { useProducts } from "../../hooks/useProducts";
 
 
 
-const EditFormOpen = ({ isOpen, onClose, children }) => {
+const EditFormOpen = () => {
 
     const { getProductsById, productById } = useProducts()
 
@@ -13,10 +13,6 @@ const EditFormOpen = ({ isOpen, onClose, children }) => {
         getProductsById(2)    
     }, [getProductsById])
 
-
-    if (!isOpen) {
-      return null;
-    }
   
     return (
       <div className="modal-overlay" >
@@ -39,7 +35,7 @@ const EditFormOpen = ({ isOpen, onClose, children }) => {
                   </select>
               </div>
               <div>
-                  <h4 className="titles">Descripcion</h4>
+                  <h4 className="description">Descripcion</h4>
                   <input value={productById.description} id="description" className="description-input" type="text" />
               </div>
   
@@ -55,12 +51,10 @@ const EditFormOpen = ({ isOpen, onClose, children }) => {
               </div>
               <div className="buttons-container">
                   <button className="add">EDITAR</button>
-                  <button className="cancel " onClick={onClose}>CANCELAR</button>
+                  <button className="cancel">CANCELAR</button>
                   
               </div>
           </div>
-          {children}
-  
       </div>
       
     );
