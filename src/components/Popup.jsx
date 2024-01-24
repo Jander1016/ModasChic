@@ -12,7 +12,7 @@ const Popup = ({ productId, isOpen,onClose}) => {
     // Hacer una solicitud a la API para obtener los detalles del producto por ID
     const fetchProductData = async () => {
       try {
-        const response = await fetch(`http://localhost:3001/Products/${8}`);
+        const response = await fetch(`http://localhost:3001/Products/${productId}`);
         const data = await response.json()
         setProductData(data);
         console.log(data)

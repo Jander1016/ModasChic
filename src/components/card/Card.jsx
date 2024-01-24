@@ -1,5 +1,8 @@
-import React from 'react';
 import './Card.css';
+import OpenModalForm from '../OpenModalForm';
+const Card = ({productData}) => {
+  const { isModalOpen, openModal, closeModal } = OpenModalForm()
+/*  const verDetalles = (productId) => {
 import pantalon1 from "../src/assets/pantalon1.webp";
 import Popup from "../Popup"
 const Card = () => {
@@ -7,21 +10,27 @@ const Card = () => {
     // Lógica para ver detalles, si es necesario
     console.log(`Detalles del producto ${productId}`);
   };
-
+*/
+const handlerEdit = (event) =>{
+  event.preventDefault()
+/*   console.log(event.target.files) */
+  openModal();
+}
   return (
     <div className="product-card" id="product1">
       <div className="imgproduct">
-        <img src={pantalon1} alt="Producto 1" />
+        <img src={productData.image} alt={productData.name} />
       </div>
       <div className="description">
-        <h3>Pantalon de chàndal color block</h3>
+        <h3>{productData.title}</h3>
         <div className="catprice">
-        <p className="category">Ropa Deportiva</p>
-        <p className="price">9.99€</p>
+        <p className="category">{productData.category}</p>
+        <p className="price">{productData.price}</p>
         </div>
       </div> 
-        <button onClick={() => verDetalles('productId')}>Ver Detalles</button>
-    <Popup/>
+        <button onClick={ () => verDetalles('productId')}>Ver Detalles</button>
+        {isModalOpen &&
+    <Popup isOpen={isModalOpen} onClose={closeModal}/>}
     </div>
   );
 };
