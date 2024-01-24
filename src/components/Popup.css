@@ -16,13 +16,14 @@
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows:88% 10%;
   row-gap: 1em;
+  background: gray;
   /*z-index: 999;
   background-color: (0,0,0,0.75);*/
 justify-content: center;
 align-content: center;
 }
-.body{max-height: 100%;
-  max-widht: 100%;}
+/* .body{max-height: 100%;
+  max-widht: 100%;} */
 .container img {
   max-width: 80%;
   max-height: 90%;

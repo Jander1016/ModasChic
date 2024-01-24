@@ -1,37 +1,38 @@
-import './Card.css';
-import OpenModalForm from '../OpenModalForm';
-const Card = ({productData}) => {
-  const { isModalOpen, openModal, closeModal } = OpenModalForm()
-/*  const verDetalles = (productId) => {
-import pantalon1 from "../src/assets/pantalon1.webp";
-import Popup from "../Popup"
-const Card = () => {
-  const verDetalles = (productId) => {
-    // Lógica para ver detalles, si es necesario
-    console.log(`Detalles del producto ${productId}`);
+/* eslint-disable react/prop-types */
+import "./Card.css";
+import OpenModalForm from "../OpenModalForm";
+import Popup from "../Popup";
+
+const Card = ({ product }) => {
+  const { isModalOpen, openModal, closeModal } = OpenModalForm();
+
+  const handlerShow = (event) => {
+    event.preventDefault();
+    openModal();
   };
-*/
-const handlerEdit = (event) =>{
-  event.preventDefault()
-/*   console.log(event.target.files) */
-  openModal();
-}
+
   return (
-    <div className="product-card" id="product1">
+    <>
+    <div className="product-card">
       <div className="imgproduct">
-        <img src={productData.image} alt={productData.name} />
+        <img src={product.image} alt={product.name} />
       </div>
       <div className="description">
-        <h3>{productData.title}</h3>
+        <h3>{product.title}</h3>
         <div className="catprice">
-        <p className="category">{productData.category}</p>
-        <p className="price">{productData.price}</p>
+          <p className="category">{product.category}</p>
+          <p className="price">{product.price}</p>
         </div>
-      </div> 
-        <button onClick={ () => verDetalles('productId')}>Ver Detalles</button>
-        {isModalOpen &&
-    <Popup isOpen={isModalOpen} onClose={closeModal}/>}
+      </div>
+      <button onClick={handlerShow}>Ver Detalles</button>
+      { isModalOpen && 
+          <Popup
+           isOpen={isModalOpen} 
+           onClose={closeModal} 
+           productId={product.id}
+      /> }
     </div>
+    </>
   );
 };
 

@@ -1,49 +1,43 @@
- // Popup.js
-import React, { useState, useEffect } from 'react';
 import './Popup.css';  // Importa el archivo CSS
-import OpenModalForm from './OpenModalForm';
+import { useProducts } from '../hooks/useProducts';
+import { useEffect } from 'react';
 
 
-const Popup = ({ productId, isOpen,onClose}) => {
-  const [productData, setProductData] = useState(null);
-  const {isModalOpen,closeModal}=OpenModalForm()
+// eslint-disable-next-line react/prop-types
+const Popup = ({ productId, isOpen, onClose}) => {
+
+  const { getProductsById, productById } = useProducts()
 
   useEffect(() => {
-    // Hacer una solicitud a la API para obtener los detalles del producto por ID
-    const fetchProductData = async () => {
-      try {
-        const response = await fetch(`http://localhost:3001/Products/${productId}`);
-        const data = await response.json()
-        setProductData(data);
-        console.log(data)
-      } catch (error) {
-        console.error('Error al obtener datos del producto:', error);
-      }
-    };
 
-    fetchProductData();
-  }, [productId]);
+    getProductsById(productId)
+  }, [getProductsById, productId]);
+
   if (!isOpen){return null} 
 
 
   return (
     <section className="pop up">
 
-      {productData && (
+      {productById && (
         <>
           <div className='container'>
             <div className='img'>
-              <img src={productData.image} alt={productData.name} /> </div>
+              <img src={productById.image} alt={productById.name} /> </div>
             <div className='text'>
-              <h5>{productData.title}</h5>
+              <h5>{productById.title}</h5>
               <div className='price'>
-                <p className='category'>{productData.category}</p>
-                <p className='price'>{productData.price}</p>
+                <p className='category'>{productById.category}</p>
+                <p className='price'>{productById.price}</p>
                 </div>
-              <p>{productData.description}</p>
+              <p>{productById.description}</p>
              </div>
          
-          <button onClose={closeModal} isOpen ={isModalOpen}>Cerrar</button>
+          <button 
+            onClick ={onClose}
+            >
+              Cerrar
+            </button>
           </div>
         </>
       )}

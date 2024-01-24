@@ -1,7 +1,8 @@
-
+/* 
 body{
   max-width: 900px;
-}
+} */
+
 main{
   display: flex;
   width: 100%;
@@ -18,6 +19,7 @@ main{
 
 .product{
   text-align: center;
+  margin: 1rem;
 }
 
 .product img { 
