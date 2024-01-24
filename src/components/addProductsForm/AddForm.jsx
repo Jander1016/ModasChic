@@ -6,29 +6,41 @@ import { v4 as uuidv4 } from 'uuid';
 
 const AddForm = ({ isOpen, onClose }) => {
 
-console.log(uuidv4())
-
    const [datos, setDatos] = useState({
         "title": "",
         "price": 0,
         "description": "",
         "category": "",
         "image": "",
-        "stock": 0
+        "stock": 0,
+        "id": uuidv4()
     });
+    
+    const [image, setImage] = useState("");
 
-    const handleChange = (e) => {
-        setDatos({
-            ...datos,
-            [e.target.name]: e.target.value,
-        });
+    const handleImageChange = (event) => {
+        const file = event.target.files[0];
+        const reader = new FileReader();
+        reader.readAsDataURL(file);
+        reader.onload = () => {
+            setImage(reader.result);
+        };
     };
 
+    const handleChange = (e) => {
+        e.preventDefault();
+        setDatos({
+            ...datos, image,
+            [e.target.name]: e.target.value,
+        });
+        
+    };
+    
     const handleSubmit = async (e) => {
         e.preventDefault();
-
         const URL = "http://localhost:3001/Products";
-
+        let product = datos
+        console.log(product)
         try {
             const response = await fetch(URL, {
                 method: "POST",
@@ -41,6 +53,7 @@ console.log(uuidv4())
             if (response.ok) {
                 // Puedes mostrar un mensaje de éxito al usuario aquí
                 console.log("Datos actualizados con éxito");
+                
                 onClose(); // Cierra el formulario después de agregar
             } else {
                 // Puedes mostrar un mensaje de error al usuario aquí
@@ -58,7 +71,7 @@ console.log(uuidv4())
 
     return (
         <div className="modal-overlay">
-            <form onSubmit={handleSubmit} className="modal">
+            <form onSubmit={(e) => {handleSubmit(e)}} className="modal">
 
                 <div>
                     <h4 className="titles">Añadir imagen</h4>
@@ -66,14 +79,13 @@ console.log(uuidv4())
                         className="archive-input"
                         type="file"
                         accept="image/*"
-
+                        onChange={handleImageChange}
                     />
                 </div>
                 <div>
                     <h4 className="titles">Título de producto</h4>
                     <input
                         name="title"
-                        value={datos.title}
                         className="title-input"
                         type="text"
                         onChange={handleChange}
@@ -82,19 +94,20 @@ console.log(uuidv4())
                 <div className="category-selection">
                     <h4>Categoria</h4>
                     <select
-                    value={datos.category}
                         className="category-input"
                         name="category"
-                        id="category">
-                        <option value="Sudaderas">Sudaderas</option>
-                        <option value="Camisetas">Camisetas</option>
-                        <option value="Pantalontes">Pantalontes</option>
+                        id="category"
+                        onChange={handleChange}
+                       
+                       /*  value='' */
+                        >
+                        <option value="sudaderas">Sudaderas</option>
+                        <option value="camisetas">Camisetas</option>
+                        <option value="pantalones">Pantalones</option>
                     </select>
                 </div>
                 <div>
-                    <h4 className="titles">Descripcion</h4>
-                    <input
-                    value={datos.description}
+                    <textarea
                         name='description'
                         id="description"
                         className="description-input"
@@ -107,7 +120,6 @@ console.log(uuidv4())
                     <div className="prizeStock">
                         <h4>Precio</h4>
                         <input
-                        value={datos.price}
                             name='price'
                             onChange={handleChange}
                             type="number"
@@ -116,7 +128,6 @@ console.log(uuidv4())
                     <div className="prizeStock">
                         <h4>Stock</h4>
                         <input
-                        value={datos.stock}
                             name='stock'
                             onChange={handleChange}
                             type="number"
@@ -124,7 +135,7 @@ console.log(uuidv4())
                     </div>
                 </div>
                 <div className="buttons-container">
-                    <button type='submit' onClick={onClose} className="add">AGREGAR</button>
+                    <button type='submit' className="add">AGREGAR</button>
                     <button className="cancel " onClick={onClose}>CANCELAR</button>
 
                 </div>

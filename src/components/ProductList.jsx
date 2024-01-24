@@ -22,9 +22,9 @@ function ProductRow({ product }) {
   return (
     <>
     <tr className="product" key={product.id}>
-      <th className="product__id" scope="row">
+    {/*   <th className="product__id" scope="row">
         {product.id}
-      </th>
+      </th> */}
       <td>
         <figure>
           <img
@@ -68,7 +68,7 @@ function ProductList({ products }) {
         <caption className="dark">Lista de Productos</caption>
         <thead className="table-dark">
           <tr>
-            <th scope="col">#</th>
+      {/*       <th scope="col">#</th> */}
             <th scope="col">Imagen</th>
             <th scope="col">Producto</th>
             <th scope="col">Categoria</th>

@@ -42,7 +42,7 @@ const EditFormOpen = ({ isOpen, onClose, id }) => {
     };
 
     // id = Event.target
-    console.log(id)
+/*     console.log(id) */
 
     useEffect(() => {
         getProductsById(id)
@@ -117,10 +117,7 @@ const EditFormOpen = ({ isOpen, onClose, id }) => {
 
         })
             .then((respose) => respose.json())
-            .then((res) => {
-                    const jsonData = JSON.parse(Object.assign(res)); // Aquí se intenta analizar el texto como JSON
-                      console.log(jsonData);
-            })
+            .then((res) => res)
             .catch((error) => {
                 console.log(error)
             })
@@ -138,51 +135,40 @@ const EditFormOpen = ({ isOpen, onClose, id }) => {
                 <div>
                     <h4 className="titles">Añadir imagen</h4>
                     <input
-
                         className="archive-input"
                         type="file"
                         name="image"
                         accept="image/*"
                         onChange={handleImageChange}
-                        // value={image}
                     />
                 </div>
                 <div>
                     <h4 className="titles">Título de producto</h4>
                     <input
-                        required
                         onChange={handleChangeTitle}
                         placeholder={productById.title}
-                        // value={productById.title}
                         className="title-input"
                         name="title"
                         type="text"
-                   
-
                     />
                 </div>
                 <div className="category-selection">
                     <h4>Categoria</h4>
                     <select
-                        required
                         className="category-input"
                         name="category"
                         id="category"
-                        // value={datos.category}
                         onChange={handleChangeCategory}
                     >
-
                         <option value="Sudaderas">Sudaderas</option>
                         <option value="Camisetas">Camisetas</option>
                         <option value="Pantalontes">Pantalontes</option>
                     </select>
                 </div>
                 <div>
-                    <h4 className="titles">Descripcion</h4>
-                    <input
-                        required
+                    <h4 className="titles">Descripción</h4>
+                    <textarea
                         placeholder={productById.description}
-                        // value={datos.description}
                         id="description"
                         name="description"
                         className="description-input"
@@ -195,10 +181,8 @@ const EditFormOpen = ({ isOpen, onClose, id }) => {
                     <div className="prizeStock">
                         <h4>Precio</h4>
                         <input
-                            required
                             onChange={handleChangeStock}
                             placeholder={productById.price}
-                            // value={datos.price}
                             name="price"
                             type="number"
                        
@@ -208,10 +192,8 @@ const EditFormOpen = ({ isOpen, onClose, id }) => {
                     <div className="prizeStock">
                         <h4>Stock</h4>
                         <input
-                            required
                             onChange={handleChangePrice}
                             placeholder={productById.stock}
-                            // value={datos.stock}
                             name="stock"
                             type="number"
                        
@@ -221,7 +203,7 @@ const EditFormOpen = ({ isOpen, onClose, id }) => {
                 </div>
                 <div className="buttons-container">
                     <button className="add" type="submit">EDITAR</button>
-                    <button className="cancel " onClick={onClose}>CANCELAR</button>
+                    <button className="cancel" onClick={onClose}>CANCELAR</button>
 
                 </div>
             </form>
