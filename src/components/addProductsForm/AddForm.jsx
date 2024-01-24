@@ -2,10 +2,11 @@
 import { useState } from 'react';
 import './AddForm.css'
 
-
+import { v4 as uuidv4 } from 'uuid';
 
 const AddForm = ({ isOpen, onClose }) => {
 
+console.log(uuidv4())
 
    const [datos, setDatos] = useState({
         "title": "",

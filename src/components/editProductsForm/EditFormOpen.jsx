@@ -1,3 +1,5 @@
+/* eslint-disable no-unused-vars */
+/* eslint-disable react/prop-types */
 
 import { useEffect, useState } from "react";
 import './EditForm.css'
@@ -9,35 +11,42 @@ const EditFormOpen = ({ isOpen, onClose, id }) => {
 
     const { getProductsById, productById } = useProducts()
 
-    const { datos, setDatos} = useState(
+    const { datos, setDatitos} = useState(
         {
 
-            "title": "",
-            "price": 0,
-            "description": "",
-            "category": "",
-            "image": "",
-            "stock": 0
+            "title": productById.title,
+            "price": productById.price,
+            "description": productById.description,
+            "category": productById.category,
+            "image":productById.image,
+            "stock": productById.stock
     
         }
     )
 
     
-    const [title, setTitle] = useState("");
-    const [description, setDescription] = useState("");
-    const [price, setPrice] = useState("");
-    const [stock, setStock] = useState("");
+    const [title, setTitle] = useState(productById.title);
+    const [description, setDescription] = useState(productById.description);
+    const [price, setPrice] = useState(productById.price);
+    const [stock, setStock] = useState(productById.stock);
+    const [category, setCategory] = useState(productById.category);
+    const [image, setImage] = useState(productById.image);
 
-    let getProduct = async () => {
-        await getProductsById(id)
-        setDatos(productById)
+    const handleImageChange = (event) => {
+        const file = event.target.files[0];
+        const reader = new FileReader();
+        reader.readAsDataURL(file);
+        reader.onload = () => {
+            setImage(reader.result);
+        };
+    };
 
-    }
-
+    // id = Event.target
+    console.log(id)
 
     useEffect(() => {
-        getProduct()
-    }, [getProduct])
+        getProductsById(id)
+    }, [getProductsById,id])
 
     const handleChangeTitle = (e) => {
         e.preventDefault()
@@ -64,51 +73,53 @@ const EditFormOpen = ({ isOpen, onClose, id }) => {
     
     }
 
-/* 
+    const handleChangeCategory= (e) => {
+        e.preventDefault()
+        const value = e.target.value
+        setCategory(value)
+    
+    }
+
+
     const handleChange = (e) => {
         e.preventDefault()
         const { name, value } = e.target
         
+        console.log(value)
 
-        setDatos({
-            ...datos,
-
-            [name]: value
-        })
-        console.log(datos)
-        
-    } */
+        setDatitos({...datos, [name]: value })
+    } 
 
 
     const handleSubmit = async (e) => {
         e.preventDefault()
       
-        const URL = "http://localhost:3001/Products"
+        const URL = "http://localhost:3001/Products/"+ id
         let product = {
 
             "title": title,
             "price": price,
             "description": description,
-            "category": "",
-            "image": "",
+            "category": category,
+            "image": image,
             "stock": stock
     
         }
         console.log(product)
-
+//https://fakestoreapi.com/img/71-3HjGNDUL._AC_SY879._SX._UX._SY._UY_.jpg"
         fetch(URL, {
 
-            method: "PUT",
+            method: "PATCH",
             headers: {
                 "Content-Type": "application/json",
             },
-            body: JSON.stringify(product)
+            body:JSON.stringify(Object.assign(product))
 
         })
             .then((respose) => respose.json())
             .then((res) => {
-                alert("Datos actualizados")
-
+                    const jsonData = JSON.parse(Object.assign(res)); // Aquí se intenta analizar el texto como JSON
+                      console.log(jsonData);
             })
             .catch((error) => {
                 console.log(error)
@@ -132,8 +143,8 @@ const EditFormOpen = ({ isOpen, onClose, id }) => {
                         type="file"
                         name="image"
                         accept="image/*"
-                   
-
+                        onChange={handleImageChange}
+                        // value={image}
                     />
                 </div>
                 <div>
@@ -141,7 +152,8 @@ const EditFormOpen = ({ isOpen, onClose, id }) => {
                     <input
                         required
                         onChange={handleChangeTitle}
-                        placeholder={datos.title}
+                        placeholder={productById.title}
+                        // value={productById.title}
                         className="title-input"
                         name="title"
                         type="text"
@@ -153,14 +165,14 @@ const EditFormOpen = ({ isOpen, onClose, id }) => {
                     <h4>Categoria</h4>
                     <select
                         required
-                        
                         className="category-input"
                         name="category"
                         id="category"
-                   
+                        // value={datos.category}
+                        onChange={handleChangeCategory}
                     >
 
-                        <option placeholder="Sudaderas">Sudaderas</option>
+                        <option value="Sudaderas">Sudaderas</option>
                         <option value="Camisetas">Camisetas</option>
                         <option value="Pantalontes">Pantalontes</option>
                     </select>
@@ -169,7 +181,8 @@ const EditFormOpen = ({ isOpen, onClose, id }) => {
                     <h4 className="titles">Descripcion</h4>
                     <input
                         required
-                        placeholder={datos.description}
+                        placeholder={productById.description}
+                        // value={datos.description}
                         id="description"
                         name="description"
                         className="description-input"
@@ -184,7 +197,8 @@ const EditFormOpen = ({ isOpen, onClose, id }) => {
                         <input
                             required
                             onChange={handleChangeStock}
-                            placeholder={datos.price}
+                            placeholder={productById.price}
+                            // value={datos.price}
                             name="price"
                             type="number"
                        
@@ -196,7 +210,8 @@ const EditFormOpen = ({ isOpen, onClose, id }) => {
                         <input
                             required
                             onChange={handleChangePrice}
-                            placeholder={datos.stock}
+                            placeholder={productById.stock}
+                            // value={datos.stock}
                             name="stock"
                             type="number"
                        
