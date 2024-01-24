@@ -1,16 +1,18 @@
  // Popup.js
 import React, { useState, useEffect } from 'react';
 import './Popup.css';  // Importa el archivo CSS
+import OpenModalForm from './OpenModalForm';
 
 
-const Popup = ({ productId }) => {
+const Popup = ({ productId, isOpen,onClose}) => {
   const [productData, setProductData] = useState(null);
+  const {isModalOpen,closeModal}=OpenModalForm()
 
   useEffect(() => {
     // Hacer una solicitud a la API para obtener los detalles del producto por ID
     const fetchProductData = async () => {
       try {
-        const response = await fetch(`http://localhost:3001/Products/${6}`);
+        const response = await fetch(`http://localhost:3001/Products/${8}`);
         const data = await response.json()
         setProductData(data);
         console.log(data)
@@ -21,6 +23,8 @@ const Popup = ({ productId }) => {
 
     fetchProductData();
   }, [productId]);
+  if (!isOpen){return null} 
+
 
   return (
     <section className="pop up">
@@ -39,7 +43,7 @@ const Popup = ({ productId }) => {
               <p>{productData.description}</p>
              </div>
          
-          <button>Cerrar</button>
+          <button onClose={closeModal} isOpen ={isModalOpen}>Cerrar</button>
           </div>
         </>
       )}
