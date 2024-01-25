@@ -17,20 +17,20 @@ const Popup = ({ productId, isOpen, onClose}) => {
 
 
   return (
-    <section className="pop up">
+    <section className="pop-up">
 
       {productById && (
         <>
-          <div className='container'>
+          <div className='popup'>
             <div className='img'>
               <img src={productById.image} alt={productById.name} /> </div>
             <div className='text'>
-              <h5>{productById.title}</h5>
-              <div className='price'>
+              <h4>{productById.title}</h4>
+              <div className='subtitle'>
                 <p className='category'>{productById.category}</p>
                 <p className='price'>{productById.price}</p>
                 </div>
-              <p>{productById.description}</p>
+              <p className='content'>{productById.description}</p>
              </div>
          
           <button 

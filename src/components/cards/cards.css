@@ -2,7 +2,6 @@
   list-style: none;
   margin: 0;
   padding: 0;
-
   display: grid;
   width: 100%;
   grid-template-columns: repeat(auto-fit, minmax(200px,1fr));
@@ -12,4 +11,7 @@
 .productItem{
   display: flex;
   flex: column;
+  border: 1px #b45e72 solid;
 }
+h3{text-align: center;
+margin-top: 40px;}
