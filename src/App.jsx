@@ -1,22 +1,14 @@
-import './App.css'
-import ProductsDashboard from './pages/products'
-import OpenModalForm from './components/OpenModalForm'
-import AddForm from './components/addProductsForm/AddForm.jsx'
+import ProductsFront from "./pages/frontProducts";
+// import ProductsDashboard from "./pages/products";
 
-function App() {
-  const { isModalOpen, openModal, closeModal } = OpenModalForm()
-
-
+export default function App() {
   return (
     <>
-      <button onClick={openModal}>Open Create Modal</button>
-
-      <ProductsDashboard /> 
-
-      <AddForm isOpen={isModalOpen} onClose={closeModal}></AddForm>
-
+      <main>
+        {
+            <ProductsFront />
+        }
+      </main>
     </>
-  )
+  );
 }
-
-export default App

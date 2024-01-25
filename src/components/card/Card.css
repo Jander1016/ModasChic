@@ -1,0 +1,40 @@
+/*body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    height: 100vh;
+    margin: 60px;
+} */
+
+ .product-card {
+    /* border: 1px solid #eb9393; */
+    text-align: center;
+    max-width: 300px;
+    
+    
+}
+
+.imgproduct{
+    width: 180px;
+     height: 180px;
+     padding: 1rem;
+}
+
+.product-card .imgproduct img {
+    max-width: 100%;
+   
+    margin-bottom: 10px;
+    object-fit:contain;
+}
+
+
+
+.product-card .descrption button {
+    margin: 5px;
+    padding: 1rem;
+    cursor: pointer;
+}
+
+.catprice {
+    display:flex;
+    justify-content: space-between;
+}

@@ -15,7 +15,6 @@ function ProductRow({ product }) {
 
   const handlerEdit = (event) =>{
     event.preventDefault()
-  /*   console.log(event.target.files) */
     openModal();
   }
     
