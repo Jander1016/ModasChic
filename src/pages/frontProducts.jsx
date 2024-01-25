@@ -1,6 +1,7 @@
 import { useEffect } from "react"
 import { useProducts } from "../hooks/useProducts"
-import { ProductsCards } from "../components/cards/cards"
+ import { ProductsCards } from "../components/cards/cards" 
+import Navbar from '../components/Navbar/Navbar.jsx'
 
 function ProductsFront() {
   const { products, loading, getProducts  } = useProducts()
@@ -14,13 +15,14 @@ function ProductsFront() {
     <>
         {
           loading
-          ? <article className="d-flex justify-content-center">
+           ? <article className="d-flex justify-content-center">
               <div className="spinner-border" role="status">
                 <span className="visually-hidden">Loading...</span>
               </div>
              </article>
-          :<ProductsCards products={products}/>
+          :<ProductsCards products={products}/> 
         } 
+      
     </>
   )
 }
