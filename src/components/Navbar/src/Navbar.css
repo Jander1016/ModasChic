@@ -17,17 +17,21 @@
 header {
 	width: 100%;
 	height: 80px;
+	position: fixed; /* Mantén la barra en la parte superior */
+	top: 0;
+	left: 0;
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
 	padding: 0 2rem;
 	background-color: var(--mainColor);
 	color: var(--textColor);
+	z-index: 1000; /* Asegúrate de que esté en la parte superior de otros elementos */
 }
 
-header img{
-width: 100px;
-height: 100%;
+header img {
+	width: 100px;
+	height: 100%;
 }
 
 nav a {
@@ -66,9 +70,9 @@ nav {
 
 	header nav {
 		position: fixed;
-		top: -100vh;
+		top: 80px; /* Ajusta según la altura de la barra de navegación */
 		left: 0;
-		height: 100%;
+		height: calc(100% - 80px); /* Ajusta según la altura de la barra de navegación */
 		width: 100%;
 		display: flex;
 		flex-direction: column;
@@ -80,7 +84,7 @@ nav {
 	}
 
 	header .responsive_nav {
-		transform: translateY(100vh);
+		transform: translateY(-100vh);
 	}
 
 	nav .nav-close-btn {
