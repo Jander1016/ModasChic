@@ -3,6 +3,7 @@ import { useRef } from "react";
 import { FaBars, FaTimes } from "react-icons/fa";
 import "./Navbar.css";
 import logo2 from '../../assets/Images/logo2.png';
+import { Link } from "react-router-dom";
 
 
 function Navbar() {
@@ -17,15 +18,10 @@ function Navbar() {
 	return (
 		<header>
 			<img src={logo2} alt="Logo Modas Chic" />
-			<nav ref={navRef}>
-				<a href="/#">Inicio</a>
-				<a href="/#">Control de productos</a>
+			<nav ref={navRef} className="responsive_nav">
+				<Link to="/" onClick={showNavbar}>Inicio</Link>
+				<Link to="/control-productos" onClick={showNavbar}>Control de productos</Link>
 				{/* <a href="/#">Calendar</a> */}
-				<button
-					className="nav-btn nav-close-btn"
-					onClick={showNavbar}>
-					<FaTimes />
-				</button>
 			</nav>
 			<button
 				className="nav-btn"

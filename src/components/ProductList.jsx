@@ -3,6 +3,8 @@
 import { FaRegEdit,FaRegTrashAlt } from "react-icons/fa"
 import OpenModalForm from "./OpenModalForm";
 import EditFormOpen from "./editProductsForm/EditFormOpen"; 
+import { useState, useEffect } from "react";
+import { productsList } from "../services/productsList";
 
 function ProductRow({ product }) {
   const { isModalOpen, openModal, closeModal } = OpenModalForm()
@@ -118,7 +120,7 @@ function NoProductsResults() {
   return <p> No se encontraron productos para esta busqueda</p>;
 }
 
-export function Products({ products }) {
+/* export function Products({ products }) {
   const hasProducts = products?.length > 0;
   return hasProducts ? (
     <ProductList 
@@ -127,4 +129,20 @@ export function Products({ products }) {
   ) : (
     <NoProductsResults />
   );
+} */
+export function ProductsComponent() {
+ const [products, setProducts] = useState([]);
+
+ useEffect(() => {
+    async function loadProducts() {
+      const loadedProducts = await ProductList.loadProducts();
+      setProducts(loadedProducts);
+    }
+
+    loadProducts();
+ }, []);  
+ const hasProducts = products?.length > 0;
+ return (
+  <ProductList products={products} />
+);
 }
