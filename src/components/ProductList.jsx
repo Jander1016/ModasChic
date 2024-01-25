@@ -19,6 +19,31 @@ function ProductRow({ product }) {
     openModal();
   }
     
+  const handleDelete = async (product, e) => {
+    e.preventDefault()
+    if (!window.confirm('¿Desea eliminar este producto?')) {
+      return;
+    }
+    const URL = "http://localhost:3001/Products/"+ product.id
+
+    console.log(product)
+    fetch(URL, {
+
+        method: "DELETE",
+        headers: {
+            "Content-Type": "application/json",
+        },
+        body:JSON.stringify(Object.assign(product))
+
+    })
+        .then((respose) => respose.json())
+        .then((res) => res)
+        
+        .catch((error) => {
+            console.log(error)
+        })
+}
+
   return (
     <>
     <tr className="product" key={product.id}>
@@ -45,7 +70,7 @@ function ProductRow({ product }) {
         <button onClick={handlerEdit} className="btn btn-primary" type="button">
           <FaRegEdit />
         </button>
-        <button  className="btn btn-danger" type="button">
+        <button onClick={(e) => handleDelete(product, e)} className="btn btn-danger" type="button">
           <FaRegTrashAlt />
         </button>
       </td>
