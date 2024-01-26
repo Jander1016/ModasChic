@@ -17,15 +17,19 @@ const Popup = ({ productId, isOpen, onClose}) => {
 
 
   return (
+    
     <section className="pop-up">
+
 
       {productById && (
         <>
+        <div className="overlay" onClick={onClose}></div>
           <div className='popup'>
+            
             <div className='img'>
               <img src={productById.image} alt={productById.name} /> </div>
             <div className='text'>
-              <h4>{productById.title}</h4>
+              <h3>{productById.title}</h3>
               <div className='subtitle'>
                 <p className='category'>{productById.category}</p>
                 <p className='price'>{productById.price}</p>
@@ -33,15 +37,14 @@ const Popup = ({ productId, isOpen, onClose}) => {
               <p className='content'>{productById.description}</p>
              </div>
          
-          <button 
-            onClick ={onClose}
-            >
-              Cerrar
+          <button onClick ={onClose}>Cerrar
             </button>
           </div>
         </>
       )}
+      
     </section>
+    
   );
 };
 

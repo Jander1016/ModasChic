@@ -24,7 +24,7 @@ const Card = ({ product }) => {
           <p className="price">{product.price}</p>
         </div>
       </div>
-      <button onClick={handlerShow}>Ver Detalles</button>
+      <button className="details" onClick={handlerShow}>Ver Detalles</button>
       { isModalOpen && 
           <Popup
            isOpen={isModalOpen} 
