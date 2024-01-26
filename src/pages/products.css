@@ -1,0 +1,27 @@
+
+/* @media screen and (min-width: 768px) {
+  .popup {
+    position: fixed;
+  top: 40%;
+  transform: translate(-50%, -50%);
+  max-width: fit-content;
+  outline: 3px #b45e72 solid;
+  margin: 60px auto;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows:88% 10%;
+  row-gap: 1em;
+  background: white;
+  padding: 15px;
+  align-content: unset;
+  z-index: 1000;
+ }} */
+  
+/* 
+.card__dashboard{
+  padding-top: 3rem;
+} */
+
+.btn__Addnew{
+  margin-top: 50px;
+}

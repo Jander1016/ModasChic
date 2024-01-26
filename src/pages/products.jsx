@@ -13,7 +13,7 @@ function ProductsDashboard() {
     <>
         {
           loading
-          ? <article className="d-flex justify-content-center">
+          ? <article className="card__Dasshboar">
               <div className="spinner-border" role="status">
                 <span className="visually-hidden">Loading...</span>
               </div>

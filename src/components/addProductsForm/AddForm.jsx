@@ -51,12 +51,9 @@ const AddForm = ({ isOpen, onClose }) => {
             });
 
             if (response.ok) {
-                // Puedes mostrar un mensaje de éxito al usuario aquí
                 console.log("Datos actualizados con éxito");
-                
-                onClose(); // Cierra el formulario después de agregar
+                onClose();
             } else {
-                // Puedes mostrar un mensaje de error al usuario aquí
                 console.error("Error al enviar datos a la API");
             }
         } catch (error) {

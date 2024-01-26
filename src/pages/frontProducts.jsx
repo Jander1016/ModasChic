@@ -1,7 +1,7 @@
 import { useEffect } from "react"
 import { useProducts } from "../hooks/useProducts"
  import { ProductsCards } from "../components/cards/cards" 
-import Navbar from '../components/Navbar/Navbar.jsx'
+// import Navbar from '../components/Navbar/Navbar.jsx'
 
 function ProductsFront() {
   const { products, loading, getProducts  } = useProducts()

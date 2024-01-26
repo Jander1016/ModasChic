@@ -39,6 +39,7 @@
     background-color: #f8f8f8;
 }
 
+
 .container {
     display: flex;
     flex-direction: column;
@@ -49,8 +50,8 @@
     max-width: 70%;
     width: 500px;
     height: 500px;
-}
-
+    margin-bottom: 100px;
+  }
 .category-selection {
     display: flex;
     justify-content: space-between;

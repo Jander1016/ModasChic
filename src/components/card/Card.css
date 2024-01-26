@@ -8,8 +8,6 @@
 .product-card {
     text-align: center;
     max-width: 300px;
-
-
 }
 
 .imgproduct {
@@ -61,7 +59,6 @@ h3 {
 
     .productItem {
         height: auto;
-        /* Restablece la altura en dispositivos de escritorio */
     }
 
     h3 {
@@ -79,5 +76,4 @@ h3 {
         height: auto;
         justify-content: center;
         margin-left: -33px;
-    }
-.details{}}
+    }}

@@ -4,7 +4,7 @@ import Dashboard from "../pages/Dashboard";
 import ProductInfo from "../components/ProductInfo";
 import EditProduct from "../pages/EditProduct";
 
-import { productHandler } from "../handlers/productHandler";
+// import { productHandler } from "../handlers/productHandler";
 import CreateProduct from "../pages/CreateProduct";
 
 export const router = createBrowserRouter([
@@ -15,17 +15,17 @@ export const router = createBrowserRouter([
             {
                 path: "/",
                 element: <Dashboard />,
-                loader: fetchProducts,
+                // loader: fetchProducts,
             },
             {
                 path: "/products",
                 element: <Dashboard />,
-                loader: fetchProducts,
+                // loader: fetchProducts,
             },
             {
                 path: "products/:id",
                 element: <ProductInfo />,
-                loader: fetchProduct,
+                // loader: fetchProduct,
             },
             {
                 path: "newProduct",
@@ -34,19 +34,19 @@ export const router = createBrowserRouter([
             {
                 path: "editProduct/:id",
                 element: <EditProduct />,
-                loader: fetchProduct
+                // loader: fetchProduct
             },
 
         ],
     },
 ]);
 
-async function fetchProducts() {
-    const products = await productHandler.loadProducts();
-    return { products };
-}
+// async function fetchProducts() {
+//     const products = await productHandler.loadProducts();
+//     return { products };
+// }
 
-async function fetchProduct({ params }) {
-    const product = await productHandler.loadProduct(params.id);
-    return { product };
-}
+// async function fetchProduct({ params }) {
+//     const product = await productHandler.loadProduct(params.id);
+//     return { product };
+// }

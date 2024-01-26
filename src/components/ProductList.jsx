@@ -3,8 +3,8 @@
 import { FaRegEdit,FaRegTrashAlt } from "react-icons/fa"
 import OpenModalForm from "./OpenModalForm";
 import EditFormOpen from "./editProductsForm/EditFormOpen"; 
-import { useState, useEffect } from "react";
-import { productsList } from "../services/productsList";
+import AddForm from "./addProductsForm/AddForm";
+import '../pages/products.css'
 
 function ProductRow({ product }) {
   const { isModalOpen, openModal, closeModal } = OpenModalForm()
@@ -88,8 +88,12 @@ function ProductRow({ product }) {
 }
 
 function ProductList({ products }) {
+  const { isModalOpen, openModal, closeModal } = OpenModalForm()
+
   return (
-    <section className="products container">
+    <section className="container">
+        <button className="btn__Addnew" onClick={openModal}>Agrera Producto</button>
+        {isModalOpen && <AddForm isOpen={isModalOpen}  onClose={closeModal}  />}
       <table className="table caption-top table-reponsive table-dark">
         <caption className="dark">Lista de Productos</caption>
         <thead className="table-dark">
@@ -120,7 +124,7 @@ function NoProductsResults() {
   return <p> No se encontraron productos para esta busqueda</p>;
 }
 
-/* export function Products({ products }) {
+ export function Products({ products }) {
   const hasProducts = products?.length > 0;
   return hasProducts ? (
     <ProductList 
@@ -129,20 +133,20 @@ function NoProductsResults() {
   ) : (
     <NoProductsResults />
   );
-} */
-export function ProductsComponent() {
- const [products, setProducts] = useState([]);
+} 
+// export function ProductsComponent() {
+//  const [products, setProducts] = useState([]);
 
- useEffect(() => {
-    async function loadProducts() {
-      const loadedProducts = await ProductList.loadProducts();
-      setProducts(loadedProducts);
-    }
+//  useEffect(() => {
+//     async function loadProducts() {
+//       const loadedProducts = await ProductList.loadProducts();
+//       setProducts(loadedProducts);
+//     }
 
-    loadProducts();
- }, []);  
- const hasProducts = products?.length > 0;
- return (
-  <ProductList products={products} />
-);
-}
+//     loadProducts();
+//  }, []);  
+//  const hasProducts = products?.length > 0;
+//  return (
+//   <ProductList products={products} />
+// );
+// }
