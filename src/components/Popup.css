@@ -1,11 +1,10 @@
-/* Estilos generales */
-body {
+
+/*body {
   margin: 0;
   box-sizing: border-box;
   font-family: Arial, sans-serif;
 }
-
-/* Estilos del overlay */
+*/
 .overlay {
   position: fixed;
   top: 0;
@@ -16,21 +15,20 @@ body {
   z-index: 999;
 }
 
-/* Estilos del popup */
+
 .popup {
   position: fixed;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 80%; /* Ancho ajustado para dispositivos móviles */
-  max-width: 400px; /* Ancho máximo */
+  width: 80%; 
+  max-width: 400px; 
   background: white;
   padding: 20px;
   z-index: 1000;
   outline: 3px #b45e72 solid;
   
 }
-/* Media query para escritorio (ancho mínimo de 768px) */
 @media screen and (min-width: 768px) {
   .popup {
     position: fixed;
@@ -47,36 +45,33 @@ body {
   padding: 15px;
   align-content: unset;
   z-index: 1000;
- }
+ }}
 
   .popup img {
-    max-height: 100%; /* Altura máxima ajustada para escritorio */
-    margin-top: 7%; /* Espacio superior eliminado */
-  }
+    max-height: 100%; 
+    margin-top: 7%; }
 
   .popup h3,
   .subtitle,
   .category,
   .content {
-    text-align: left; /* Alineado a la izquierda en escritorio */
-  }
+    text-align: left; }
 
   .subtitle {
-    margin-top: 5%; /* Ajustado el espacio superior */
-    margin-bottom: 8%; /* Ajustado el espacio inferior */
-  }
+    margin-top: 5%; 
+    margin-bottom: 8%; 
 
   .popup button {
-    grid-column: 1/3; /* Ocupa dos columnas en escritorio */
-    margin-top: 2%; /* Ajustado el espacio superior */
-    margin-bottom: 2%; /* Ajustado el espacio inferior */
+    grid-column: 1/3; 
+    margin-top: 2%; 
+    margin-bottom: 2%; 
   }
 }
 
 .popup img {
-  width: 100%; /* La imagen ocupa el 100% del ancho del contenedor */
-  max-height: 260px; /* Altura máxima para controlar la proporción */
-  object-fit:contain; /* Ajustar la imagen dentro del contenedor manteniendo la proporción */
+  width: 100%;
+  max-height: 260px; 
+  object-fit:contain; 
 }
 
 .popup h3 {
