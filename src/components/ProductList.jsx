@@ -92,7 +92,7 @@ function ProductList({ products }) {
 
   return (
     <section className="container">
-        <button className="btn__Addnew" onClick={openModal}>Agrera Producto</button>
+        <button className="btn__Addnew" onClick={openModal}>Agregar Producto</button>
         {isModalOpen && <AddForm isOpen={isModalOpen}  onClose={closeModal}  />}
       <table className="table caption-top table-reponsive table-dark">
         <caption className="dark">Lista de Productos</caption>
