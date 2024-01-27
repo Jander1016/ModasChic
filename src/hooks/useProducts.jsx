@@ -6,7 +6,7 @@ export function useProducts() {
   const [products, setProducts] = useState([])
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState(null)
-  const [productById, setProductById] = useState([])
+  const [productById, setProductById] = useState({})
 
   const getProducts = useCallback( async() =>{
     try {
@@ -22,6 +22,9 @@ export function useProducts() {
   },[])
 
   const getProductsById = useCallback( async(id) =>{
+    if(id === undefined || id === null || id === ""){
+      return;
+    }
       try {
         setLoading(true)
         setError(null)

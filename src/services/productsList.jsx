@@ -4,10 +4,8 @@ export const productsList = async (url) =>{
   try {
     const response = await fetch(url)
     const products = await response.json()
-
     return products
   } catch (error) {
     throw new Error('Error carga Productos: ' + error.message)
   }
-
 }

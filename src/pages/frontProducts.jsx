@@ -1,11 +1,9 @@
 import { useEffect } from "react"
-import { useProducts } from "../hooks/useProducts"
- import { ProductsCards } from "../components/cards/cards" 
-// import Navbar from '../components/Navbar/Navbar.jsx'
+ import { ProductsCards } from "../components/cards/Cards" 
+import { useProductContext } from "../context/productContext"
 
 function ProductsFront() {
-  const { products, loading, getProducts  } = useProducts()
-
+  const { products, loading, getProducts } = useProductContext()
   
   useEffect(() => {
     getProducts()
@@ -14,7 +12,7 @@ function ProductsFront() {
   return (
     <>
         {
-          loading
+          loading 
            ? <article className="d-flex justify-content-center">
               <div className="spinner-border" role="status">
                 <span className="visually-hidden">Loading...</span>

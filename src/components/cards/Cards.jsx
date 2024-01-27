@@ -23,7 +23,6 @@ function NoProductsResults() {
 
 export function ProductsCards({ products }) {
   const hasProducts = products?.length > 0;
-  console.log(products);
   return hasProducts ? (
     <ProductCards products={products} />
   ) : (
