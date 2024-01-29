@@ -1,13 +1,13 @@
 import './Popup.css';  // Importa el archivo CSS
-// import { useProducts } from '../hooks/useProducts';
+import { useProducts } from '../hooks/useProducts';
 import { useEffect } from 'react';
-import { useProductContext } from '../context/productContext';
+// import { useProductContext } from '../context/productContext'; 
 
 
 // eslint-disable-next-line react/prop-types
 const Popup = ({ productId, isOpen, onClose}) => {
 
-  const { getProductsById, productById } = useProductContext()
+  const { getProductsById, productById } = useProducts()
 
   useEffect(() => {
     getProductsById(productId)

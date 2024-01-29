@@ -12,7 +12,7 @@ export function useProducts() {
     try {
       setLoading(true)
       setError(null)
-      const newProducts = await productsList('http://localhost:3001/Products')
+      const newProducts = await productsList('https://fakeapi-dusky.vercel.app/product/')
       setProducts(newProducts)
     } catch (e) {
       setError(e.errorMessage)
@@ -28,7 +28,7 @@ export function useProducts() {
       try {
         setLoading(true)
         setError(null)
-        const newProduct = await productsList('http://localhost:3001/Products/'+ id)
+        const newProduct = await productsList('https://fakeapi-dusky.vercel.app/product/'+ id)
         setProductById(newProduct)
       } catch (e) {
         setError(e.errorMessage)

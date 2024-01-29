@@ -39,7 +39,7 @@ const AddForm = ({ isOpen, onClose }) => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const URL = "http://localhost:3001/Products";
+    const URL = "https://fakeapi-dusky.vercel.app/product/";
     try {
       const response = await fetch(URL, {
         method: "POST",

@@ -60,7 +60,7 @@ const EditFormOpen = ({ isOpen, onClose, id }) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    const URL = "http://localhost:3001/Products/" + id;
+    const URL = "https://fakeapi-dusky.vercel.app/product/" + id;
     let product = {
       title,
       price,

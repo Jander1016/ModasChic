@@ -1,3 +1,4 @@
+/* eslint-disable react-refresh/only-export-components */
 /* eslint-disable react/prop-types */
 import {
   createContext,
@@ -36,7 +37,7 @@ export function ProductProvider({ children }) {
     try {
       setLoading(true);
       setError(null);
-      const newProducts = await productsList("http://localhost:3001/Products/");
+      const newProducts = await productsList("https://fakeapi-dusky.vercel.app/product/");
 
       setProducts(newProducts);
     } catch (e) {
@@ -54,7 +55,7 @@ export function ProductProvider({ children }) {
       setLoading(true);
       setError(null);
       const newProduct = await productsList(
-        "http://localhost:3001/Products/" + idProduct
+        "https://fakeapi-dusky.vercel.app/product/" + idProduct
       );
       setProductById(newProduct);
     } catch (e) {

@@ -30,7 +30,7 @@ function ProductRow({ product }) {
     if (!window.confirm("¿Desea eliminar este producto?")) {
       return;
     }
-    const URL = "http://localhost:3001/Products/" + product.id;
+    const URL = "https://fakeapi-dusky.vercel.app/product/" + product.id;
 
     fetch(URL, {
       method: "DELETE",
