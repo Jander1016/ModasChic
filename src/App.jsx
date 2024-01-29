@@ -2,7 +2,7 @@ import Navbar from "./components/Navbar/Navbar";
 import ProductsFront from "./pages/frontProducts";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import ProductsDashboard from "./pages/products";
-import { ProductProvider } from "./context/productContext.jsx";
+import { ProductProvider } from "./context/productContext"
 
 export default function App() {
   return (
